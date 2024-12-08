@@ -528,7 +528,7 @@ Select **+ Add Condition** > **Entity** > **State**. Then under **Entity** selec
 
 ![afbeelding](https://github.com/user-attachments/assets/8559e682-af17-4c8f-939a-686efb660015)
 
-If you want to limit the amount of notifications beeing send using a cooldown time you can use the following template condition:
+If you want to limit the amount of notifications being send using a cooldown time you can use the following template condition:
 
 Select **+ Add Condition** again > **Other conditions** > **Template**. Then under **Value template** type `{{as_timestamp(now()) - as_timestamp(state_attr('automation.reolink_push', 'last_triggered'), 0) > 30}}`, the "automation.reolink_push" needs to be the name of this automation which will be set under step 7, the "30" is the cooldown time in seconds.
 
