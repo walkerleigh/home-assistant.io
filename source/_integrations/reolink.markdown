@@ -488,7 +488,7 @@ Prerequisites:
 - [Android or iOS companion app](https://companion.home-assistant.io/docs/getting_started#setting-up)
 - [Remote access to Home Assistant](https://www.home-assistant.io/docs/configuration/remote/). Although you can receive text notifications without remote access, to see the camera image in the notification (rich notification), the phone needs to be able to reach Home Assistant. The rich notification will always work, even without remote access, when the phone is on the same network as Home Assistant.
 
-   1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
+1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
 
 ![afbeelding](https://github.com/user-attachments/assets/163c45a5-1027-4ff9-b841-977b9392a026)
 ![afbeelding](https://github.com/user-attachments/assets/06a05369-73c6-4994-bdbf-f8b3dc843d5d)
@@ -496,7 +496,7 @@ Prerequisites:
 
 ![afbeelding](https://github.com/user-attachments/assets/b374098e-b4bb-4473-b917-635b3d020b03)
 
-   2. Under **When** select: **+ Add trigger** > **Entity** > **State**.
+2. Under **When** select: **+ Add trigger** > **Entity** > **State**.
 
 ![afbeelding](https://github.com/user-attachments/assets/d26fc2f9-1321-496a-9d03-8055f90db845)
 ![afbeelding](https://github.com/user-attachments/assets/c9025489-34df-489b-99a3-5b4c37fc0fd7)
@@ -506,29 +506,29 @@ Prerequisites:
 
 Then under **Entity**, select the binary sensor from the drop-down list corresponding to the camera event for which you want to receive a rich notification, for the Reolink integration the options are:
 
-- binary_sensor.{camera name}_motion
-- binary_sensor.{camera name}_person
-- binary_sensor.{camera name}_vehicle
-- binary_sensor.{camera name}_pet
-- binary_sensor.{camera name}_animal
-- binary_sensor.{camera name}_visitor (doorbell press)
-- binary_sensor.{camera name}_package
+- binary_sensor.*camera name*_motion
+- binary_sensor.*camera name*_person
+- binary_sensor.*camera name*_vehicle
+- binary_sensor.*camera name*_pet
+- binary_sensor.*camera name*_animal
+- binary_sensor.*camera name*_visitor (doorbell press)
+- binary_sensor.*camera name*_package
 
 ![afbeelding](https://github.com/user-attachments/assets/71dbdd10-fada-4a25-9da3-6d1200686ed5)
 
 Note that these entity names will be translated in the language you configured Home Assistant in. You can type to search through all your entities. You can add multiple triggers if you want to send the same message for multiple camera events like person and vehicle detection. You can also create multiple automations with a different messages for each event. In this case we chose the visitor detection for doorbell presses:
 
-   3. Under **To** select the state in which the event is detected from the dropdown, for visitor **On** for the other sensors **Detected**:
+3. Under **To** select the state in which the event is detected from the dropdown, for visitor **On** for the other sensors **Detected**:
 
 ![afbeelding](https://github.com/user-attachments/assets/e1a5b12a-f5df-4acb-ae2c-1dd9627b7652)
 
-   4. Under **And if** you can **optionally** limit when the notifications need to be sent. For instance only when you are not Home. The companion app will provide a device_tracker entity based on the GPS of your phone if you allow location tracking during setup of the app. We will use this as an example but you can add as many conditions as you like:
+4. Under **And if** you can **optionally** limit when the notifications need to be sent. For instance only when you are not Home. The companion app will provide a device_tracker entity based on the GPS of your phone if you allow location tracking during setup of the app. We will use this as an example but you can add as many conditions as you like:
 
 Select **+ Add Condition** > **Entity** > **State**. Then under **Entity** select the device_tracker entity of your phone and under **State** select **Home**.
 
 ![afbeelding](https://github.com/user-attachments/assets/8559e682-af17-4c8f-939a-686efb660015)
 
-   5. Under **Then do** select **+ Add Action** > **Camera** > **Take snapshot**.
+5. Under **Then do** select **+ Add Action** > **Camera** > **Take snapshot**.
 
 ![afbeelding](https://github.com/user-attachments/assets/564b97c3-4930-42fd-8921-0cb901665fa6)
 ![afbeelding](https://github.com/user-attachments/assets/eaed92d0-8f07-4308-9bc6-0d03934a09b3)
@@ -543,7 +543,7 @@ Under **Filename** fill in “/config/www/reolink_snapshot/last_snapshot_doorbel
 
 ![afbeelding](https://github.com/user-attachments/assets/533d7af9-bef3-483e-85c6-506f473d7f9f)
 
-   6. Add another action underneath by selecting **+ Add Action** > **Notifications** > **Send a notification via mobile_app_<phone name>**.
+6. Add another action underneath by selecting **+ Add Action** > **Notifications** > **Send a notification via mobile_app_<phone name>**.
 
 ![afbeelding](https://github.com/user-attachments/assets/23ba7fda-3326-4b82-a654-8d907b429d28)
 ![afbeelding](https://github.com/user-attachments/assets/00cdead4-fa54-4802-880d-fd85b677397a)
@@ -557,7 +557,7 @@ Tick the box in front of **data** and fill in “image: /local/reolink_snapshot/
 
 You can personalize the notification further and even control what happens if you press on the notification on your phone, [read more about this here](https://companion.home-assistant.io/docs/notifications/notifications-basic/).
 
-   7. Press **Save**, give your automation a name like “doorbell notification” and press **save** again.
+7. Press **Save**, give your automation a name like “doorbell notification” and press **save** again.
 
 ![afbeelding](https://github.com/user-attachments/assets/213390eb-1c76-4b46-8566-98c3bf665afe)
 
