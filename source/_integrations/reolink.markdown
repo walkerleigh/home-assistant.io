@@ -484,8 +484,8 @@ You can receive rich notifications on your phone when someone rings a Reolink do
 
 Prerequisites:
 
-- Reolink integration
-- [Android or IOS companion app](https://companion.home-assistant.io/docs/getting_started#setting-up)
+- This [Reolink integration](#configuration)
+- [Android or iOS companion app](https://companion.home-assistant.io/docs/getting_started#setting-up)
 - [Remote access to Home Assistant](https://www.home-assistant.io/docs/configuration/remote/). Although you can receive text notifications without remote access, to see the camera image in the notification (rich notification), the phone needs to be able to reach Home Assistant. The rich notification will always work, even without remote access, when the phone is on the same network as Home Assistant.
 
 1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
