@@ -476,6 +476,95 @@ For example, you can place arrow buttons on the card to [control the camera](/da
 
 You can receive rich notifications on your phone when someone rings a Reolink doorbell or a Reolink camera detects an event like motion or a person.
 
+![afbeelding](https://github.com/user-attachments/assets/2f58667a-9799-44f6-8cd4-c2ea7c993ba7)
+
+![afbeelding](https://github.com/user-attachments/assets/3bbb0d6c-24ea-42aa-a557-cf87292f8830)
+
+{% details "Rich notification tutorial" icon="mdi:cursor-hand" %}
+
+Prerequisites:
+
+- Reolink integration
+- [Android or IOS companion app](https://companion.home-assistant.io/docs/getting_started#setting-up)
+- [Remote access to Home Assistant](https://www.home-assistant.io/docs/configuration/remote/). Although you can receive text notifications without remote access, to see the camera image in the notification (rich notification), the phone needs to be able to reach Home Assistant. The rich notification will always work, even without remote access, when the phone is on the same network as Home Assistant.
+
+1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
+
+![afbeelding](https://github.com/user-attachments/assets/163c45a5-1027-4ff9-b841-977b9392a026)
+![afbeelding](https://github.com/user-attachments/assets/06a05369-73c6-4994-bdbf-f8b3dc843d5d)
+![afbeelding](https://github.com/user-attachments/assets/8a12d091-d5fa-4a2c-abc2-d01f4fde1ff2)
+
+![afbeelding](https://github.com/user-attachments/assets/b374098e-b4bb-4473-b917-635b3d020b03)
+
+2. Under **When** select: **+ Add trigger** > **Entity** > **State**.
+
+![afbeelding](https://github.com/user-attachments/assets/d26fc2f9-1321-496a-9d03-8055f90db845)
+![afbeelding](https://github.com/user-attachments/assets/c9025489-34df-489b-99a3-5b4c37fc0fd7)
+![afbeelding](https://github.com/user-attachments/assets/c0a277e3-bfbd-4532-a928-bc0cf632900c)
+
+![afbeelding](https://github.com/user-attachments/assets/31d9d40c-23d8-46e0-b2f6-126301e12ad3)
+
+Then under **Entity**, select the binary sensor from the drop-down list corresponding to the camera event for which you want to receive a rich notification, for the Reolink integration the options are:
+
+- binary_sensor.<camera name>_motion
+- binary_sensor.<camera name>_person
+- binary_sensor.<camera name>_vehicle
+- binary_sensor.<camera name>_pet
+- binary_sensor.<camera name>_animal
+- binary_sensor.<camera name>_visitor (doorbell press)
+- binary_sensor.<camera name>_package
+
+![afbeelding](https://github.com/user-attachments/assets/71dbdd10-fada-4a25-9da3-6d1200686ed5)
+
+Note that these entity names will be translated in the language you configured Home Assistant in. You can type to search through all your entities. You can add multiple triggers if you want to send the same message for multiple camera events like person and vehicle detection. You can also create multiple automations with a different messages for each event. In this case we chose the visitor detection for doorbell presses:
+
+3. Under **To** select the state in which the event is detected from the dropdown, for visitor **On** for the other sensors **Detected**:
+
+![afbeelding](https://github.com/user-attachments/assets/e1a5b12a-f5df-4acb-ae2c-1dd9627b7652)
+
+4. Under **And if** you can **optionally** limit when the notifications need to be sent. For instance only when you are not Home. The companion app will provide a device_tracker entity based on the GPS of your phone if you allow location tracking during setup of the app. We will use this as an example but you can add as many conditions as you like:
+
+Select **+ Add Condition** > **Entity** > **State**. Then under **Entity** select the device_tracker entity of your phone and under **State** select **Home**.
+
+![afbeelding](https://github.com/user-attachments/assets/8559e682-af17-4c8f-939a-686efb660015)
+
+5. Under **Then do** select **+ Add Action** > **Camera** > **Take snapshot**.
+
+![afbeelding](https://github.com/user-attachments/assets/564b97c3-4930-42fd-8921-0cb901665fa6)
+![afbeelding](https://github.com/user-attachments/assets/eaed92d0-8f07-4308-9bc6-0d03934a09b3)
+![afbeelding](https://github.com/user-attachments/assets/2e729222-98ad-4bd7-9f5d-056626e37dab)
+
+Under **Targets** select **Choose entity** and select the camera for which you want to add the image to the notification.
+
+![afbeelding](https://github.com/user-attachments/assets/013a9446-e216-4231-9eaf-e6cc7e8d2e80)
+![afbeelding](https://github.com/user-attachments/assets/ce42d7ee-6795-4e9d-8d8f-1eb151525c2a)
+
+Under **Filename** fill in “/config/www/reolink_snapshot/last_snapshot_doorbell.jpg”. The first part “/config/www/” is absolutely necessary to allow your phone to access the saved image when it receives the notification. The reset of the folder and filename can be changed at will as long as you fill in the same filename under step 6.
+
+![afbeelding](https://github.com/user-attachments/assets/533d7af9-bef3-483e-85c6-506f473d7f9f)
+
+6. Add another action underneath by selecting **+ Add Action** > **Notifications** > **Send a notification via mobile_app_<phone name>**.
+
+![afbeelding](https://github.com/user-attachments/assets/23ba7fda-3326-4b82-a654-8d907b429d28)
+![afbeelding](https://github.com/user-attachments/assets/00cdead4-fa54-4802-880d-fd85b677397a)
+![afbeelding](https://github.com/user-attachments/assets/f7ccc17c-e44c-4d84-a1db-c766a94249e9)
+
+Under **message** type the text you want to receive in the notification, for instance “Someone rang the doorbell”.
+Optionally tick the box in front of **title** if you want to give the notification a title, for instance the camera name if you have multiple cameras that send you notifications: “Doorbell”.
+Tick the box in front of **data** and fill in “image: /local/reolink_snapshot/last_snapshot_doorbell.jpg”. Note that “/config/www/” of the filename of step 5 now needs to be changed to “/local/”, the rest of the filename needs to be the same as in step 5.
+
+![afbeelding](https://github.com/user-attachments/assets/df9f28dc-9b06-42f8-9c09-7baae8c573ba)
+
+You can personalize the notification further and even control what happens if you press on the notification on your phone, [read more about this here](https://companion.home-assistant.io/docs/notifications/notifications-basic/).
+
+7. Press **Save**, give your automation a name like “doorbell notification” and press **save** again.
+
+![afbeelding](https://github.com/user-attachments/assets/213390eb-1c76-4b46-8566-98c3bf665afe)
+
+You are all set, ring your doorbell and see the notification on your phone. Remember the conditions under **And if** need to be met, otherwise you will not receive the notification.
+
+{% enddetails %}
+
 ### Automation ideas
 
 - Turn on (outdoor) lights near the camera to improve image clarity at night once the camera detects a person, vehicle, or animal.
