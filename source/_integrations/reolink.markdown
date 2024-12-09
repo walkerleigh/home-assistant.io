@@ -585,7 +585,7 @@ Optionally tick the box in front of **title** if you want to give the notificati
 Tick the box in front of **data** and fill in “image: /local/reolink_snapshot/last_snapshot_doorbell.jpg”. Note that “/config/www/” of the filename of step 5 now needs to be changed to “/local/”, the rest of the filename needs to be the same as in step 5.
 
 <p class='img'>
-  <img src='/images/integrations/reolink/rich_notification__new_trigger.png' alt='Screenshot: send notification'>
+  <img src='/images/integrations/reolink/rich_notification__send_to_mobile.png' alt='Screenshot: send notification'>
 </p>
 
 You can personalize the notification further and even control what happens if you press on the notification on your phone, [read more about this here](https://companion.home-assistant.io/docs/notifications/notifications-basic/).
