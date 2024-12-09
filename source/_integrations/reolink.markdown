@@ -501,11 +501,13 @@ Prerequisites:
 
 2. Under **When** select: **+ Add trigger** > **Entity** > **State**.
 
-![afbeelding](https://github.com/user-attachments/assets/d26fc2f9-1321-496a-9d03-8055f90db845)
-![afbeelding](https://github.com/user-attachments/assets/c9025489-34df-489b-99a3-5b4c37fc0fd7)
-![afbeelding](https://github.com/user-attachments/assets/c0a277e3-bfbd-4532-a928-bc0cf632900c)
+![Add trigger](/images/integrations/reolink/rich_notification__add_trigger.png)
+![Entity](/images/integrations/reolink/rich_notification__entity.png)
+![State](/images/integrations/reolink/rich_notification__state.png)
 
-![afbeelding](https://github.com/user-attachments/assets/31d9d40c-23d8-46e0-b2f6-126301e12ad3)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__new_trigger.png' alt='Screenshot: new trigger'>
+</p>
 
 Then under **Entity**, select the binary sensor from the drop-down list corresponding to the camera event for which you want to receive a rich notification, for the Reolink integration the options are:
 
@@ -517,19 +519,25 @@ Then under **Entity**, select the binary sensor from the drop-down list correspo
 - binary_sensor.*camera name*_visitor (doorbell press)
 - binary_sensor.*camera name*_package
 
-![afbeelding](https://github.com/user-attachments/assets/71dbdd10-fada-4a25-9da3-6d1200686ed5)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__entity_select.png' alt='Screenshot: Entity select'>
+</p>
 
 Note that these entity names will be translated in the language you configured Home Assistant in. You can type to search through all your entities. You can add multiple triggers if you want to send the same message for multiple camera events like person and vehicle detection. You can also create multiple automations with a different messages for each event. In this case we chose the visitor detection for doorbell presses:
 
 3. Under **To** select the state in which the event is detected from the dropdown, for visitor **On** for the other sensors **Detected**:
 
-![afbeelding](https://github.com/user-attachments/assets/e1a5b12a-f5df-4acb-ae2c-1dd9627b7652)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__state_select.png' alt='Screenshot: State select'>
+</p>
 
 4. Under **And if** you can **optionally** limit when the notifications need to be sent. For instance only when you are not Home. The companion app will provide a device_tracker entity based on the GPS of your phone if you allow location tracking during setup of the app. We will use this as an example but you can add as many conditions as you like:
 
 Select **+ Add Condition** > **Entity** > **State**. Then under **Entity** select the device_tracker entity of your phone and under **State** select **Home**.
 
-![afbeelding](https://github.com/user-attachments/assets/8559e682-af17-4c8f-939a-686efb660015)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__device_tracker_condition.png' alt='Screenshot: Device tracker condition'>
+</p>
 
 If you want to limit the amount of notifications being send using a cooldown time you can use the following template condition:
 
@@ -545,40 +553,46 @@ Select **+ Add Condition** again > **Other conditions** > **Template**. Then und
 
 In which the "automation.reolink_push" needs to be the name of this automation which will be set under step 7, the "30" is the cooldown time in seconds.
 
-![afbeelding](https://github.com/user-attachments/assets/fccbad5a-d2b8-4235-a034-cb4c4151788e)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__cooldown_time_condition.png' alt='Screenshot: cooldown time condition'>
+</p>
 
 5. Under **Then do** select **+ Add Action** > **Camera** > **Take snapshot**.
 
-![afbeelding](https://github.com/user-attachments/assets/564b97c3-4930-42fd-8921-0cb901665fa6)
-![afbeelding](https://github.com/user-attachments/assets/eaed92d0-8f07-4308-9bc6-0d03934a09b3)
-![afbeelding](https://github.com/user-attachments/assets/2e729222-98ad-4bd7-9f5d-056626e37dab)
+![Add action button](/images/integrations/reolink/rich_notification__add_action.png)
+![Camera button](/images/integrations/reolink/rich_notification__camera.png)
+![Take snapshot button](/images/integrations/reolink/rich_notification__take_snapshot.png)
 
 Under **Targets** select **Choose entity** and select the camera for which you want to add the image to the notification.
 
-![afbeelding](https://github.com/user-attachments/assets/013a9446-e216-4231-9eaf-e6cc7e8d2e80)
-![afbeelding](https://github.com/user-attachments/assets/ce42d7ee-6795-4e9d-8d8f-1eb151525c2a)
+![Choose entity button](/images/integrations/reolink/rich_notification__chose_entity.png)
+![Select Fluent camera](/images/integrations/reolink/rich_notification__select_fluent_camera.png)
 
 Under **Filename** fill in “/config/www/reolink_snapshot/last_snapshot_doorbell.jpg”. The first part “/config/www/” is absolutely necessary to allow your phone to access the saved image when it receives the notification. The reset of the folder and filename can be changed at will as long as you fill in the same filename under step 6.
 
-![afbeelding](https://github.com/user-attachments/assets/533d7af9-bef3-483e-85c6-506f473d7f9f)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__screenshot_take_snapshot.png' alt='Screenshot: take snapshot'>
+</p>
 
 6. Add another action underneath by selecting **+ Add Action** > **Notifications** > **Send a notification via mobile_app_<phone name>**.
 
-![afbeelding](https://github.com/user-attachments/assets/23ba7fda-3326-4b82-a654-8d907b429d28)
-![afbeelding](https://github.com/user-attachments/assets/00cdead4-fa54-4802-880d-fd85b677397a)
-![afbeelding](https://github.com/user-attachments/assets/f7ccc17c-e44c-4d84-a1db-c766a94249e9)
+![Add action button](/images/integrations/reolink/rich_notification__add_action.png)
+![Notifications button](/images/integrations/reolink/rich_notification__notifications.png)
+![Send a notification via mobile app](/images/integrations/reolink/rich_notification__send_to_mobile_button.png)
 
 Under **message** type the text you want to receive in the notification, for instance “Someone rang the doorbell”.
 Optionally tick the box in front of **title** if you want to give the notification a title, for instance the camera name if you have multiple cameras that send you notifications: “Doorbell”.
 Tick the box in front of **data** and fill in “image: /local/reolink_snapshot/last_snapshot_doorbell.jpg”. Note that “/config/www/” of the filename of step 5 now needs to be changed to “/local/”, the rest of the filename needs to be the same as in step 5.
 
-![afbeelding](https://github.com/user-attachments/assets/df9f28dc-9b06-42f8-9c09-7baae8c573ba)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__new_trigger.png' alt='Screenshot: send notification'>
+</p>
 
 You can personalize the notification further and even control what happens if you press on the notification on your phone, [read more about this here](https://companion.home-assistant.io/docs/notifications/notifications-basic/).
 
 7. Press **Save**, give your automation a name like “doorbell notification” and press **save** again.
 
-![afbeelding](https://github.com/user-attachments/assets/213390eb-1c76-4b46-8566-98c3bf665afe)
+![Save](/images/integrations/reolink/rich_notification__save.png)
 
 You are all set, ring your doorbell and see the notification on your phone. Remember the conditions under **And if** need to be met, otherwise you will not receive the notification.
 
