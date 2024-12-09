@@ -476,9 +476,12 @@ For example, you can place arrow buttons on the card to [control the camera](/da
 
 You can receive rich notifications on your phone when someone rings a Reolink doorbell or a Reolink camera detects an event like motion or a person.
 
-![afbeelding](https://github.com/user-attachments/assets/2f58667a-9799-44f6-8cd4-c2ea7c993ba7)
-
-![afbeelding](https://github.com/user-attachments/assets/3bbb0d6c-24ea-42aa-a557-cf87292f8830)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__small_notification.jpg' alt='Screenshot: Small phone notification'>
+</p>
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__big_notification.jpg' alt='Screenshot: Expanded phone notification'>
+</p>
 
 {% details "Rich notification tutorial" icon="mdi:cursor-hand" %}
 
@@ -490,11 +493,15 @@ Prerequisites:
 
 1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
 
-![afbeelding](https://github.com/user-attachments/assets/163c45a5-1027-4ff9-b841-977b9392a026)
-![afbeelding](https://github.com/user-attachments/assets/06a05369-73c6-4994-bdbf-f8b3dc843d5d)
-![afbeelding](https://github.com/user-attachments/assets/8a12d091-d5fa-4a2c-abc2-d01f4fde1ff2)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__settings.png' alt='Settings button'>
+  <img src='/images/integrations/reolink/rich_notification__automations_and_scenes.png' alt='Automations & scenes button'>
+  <img src='/images/integrations/reolink/rich_notification__create_automation.png' alt='Create automation button'>
+</p>
 
-![afbeelding](https://github.com/user-attachments/assets/b374098e-b4bb-4473-b917-635b3d020b03)
+<p class='img'>
+  <img src='/images/integrations/reolink/rich_notification__new_automation.png' alt='Screenshot: new automation'>
+</p>
 
 2. Under **When** select: **+ Add trigger** > **Entity** > **State**.
 
