@@ -478,8 +478,6 @@ You can receive rich notifications on your phone when someone rings a Reolink do
 
 <p class='img'>
   <img src='/images/integrations/reolink/rich_notification__small_notification.jpg' alt='Screenshot: Small phone notification'>
-</p>
-<p class='img'>
   <img src='/images/integrations/reolink/rich_notification__big_notification.jpg' alt='Screenshot: Expanded phone notification'>
 </p>
 
@@ -493,9 +491,9 @@ Prerequisites:
 
 1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
 
-<p class='img'>
-  <img src='/images/integrations/reolink/rich_notification__settings.png' alt='Settings button'> <img src='/images/integrations/reolink/rich_notification__automations_and_scenes.png' alt='Automations & scenes button'> <img src='/images/integrations/reolink/rich_notification__create_automation.png' alt='Create automation button'>
-</p>
+![Settings button](/images/integrations/reolink/rich_notification__settings.png)
+![Automations & scenes button](/images/integrations/reolink/rich_notification__automations_and_scenes.png)
+![Create automation button](/images/integrations/reolink/rich_notification__create_automation.png)
 
 <p class='img'>
   <img src='/images/integrations/reolink/rich_notification__new_automation.png' alt='Screenshot: new automation'>
