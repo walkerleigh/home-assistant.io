@@ -494,9 +494,7 @@ Prerequisites:
 1. In order to receive such a rich notification we are going to make a automation in Home Assistant. In Home Assistant go to **Settings** > **Automations & scenes** > **+ Create automation** > **Create new automation**
 
 <p class='img'>
-  <img src='/images/integrations/reolink/rich_notification__settings.png' alt='Settings button'>
-  <img src='/images/integrations/reolink/rich_notification__automations_and_scenes.png' alt='Automations & scenes button'>
-  <img src='/images/integrations/reolink/rich_notification__create_automation.png' alt='Create automation button'>
+  <img src='/images/integrations/reolink/rich_notification__settings.png' alt='Settings button'> <img src='/images/integrations/reolink/rich_notification__automations_and_scenes.png' alt='Automations & scenes button'> <img src='/images/integrations/reolink/rich_notification__create_automation.png' alt='Create automation button'>
 </p>
 
 <p class='img'>
