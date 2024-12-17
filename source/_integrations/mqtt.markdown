@@ -50,23 +50,6 @@ MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things
 
 {% include integrations/config_flow.md %}
 
-### Change MQTT discovery options
-
-The MQTT discovery options can be changed by following these steps:
-
-1. Navigate to **Settings** > **Devices & Services**
-2. Find the MQTT integration and click on it
-3. Click the **CONFIGURE** button to open the MQTT settings page
-4. Click **CONFIGURE MQTT OPTIONS** to start the options flow
-
-### Reconfigure the MQTT broker settings
-
-The MQTT broker settings can be changed by following these steps:
-
-1. Navigate to **Settings** > **Devices & Services**
-2. Find the MQTT integration and click on it
-3. From the context menu click the **Reconfigure** button to start reconfiguration of the broker settings.
-
 ### Removing the MQTT integration
 
 The MQTT integration and its entities can be removed by following these steps:
@@ -177,7 +160,7 @@ Add the MQTT integration, then provide your broker's hostname (or IP address) an
 
 1. Go to **{% my integrations title="Settings > Devices & services" %}**.
 2. Select the MQTT integration.
-3. Select **Configure**, then **Re-configure MQTT**.
+3. Reconfigure the MQTT broker settings via {% my integrations title="**Settings** > **Devices & services**" %}, click {% icon "mdi:dots-vertical" %} and select **Reconfigure**.
 
 {% important %}
 If you experience an error message like `Failed to connect due to exception: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`, then turn on `Advanced options` and set [Broker certificate validation](/integrations/mqtt/#broker-certificate-validation) to `Auto`.
@@ -223,12 +206,21 @@ A configured client certificate will only be active if broker certificate valida
 
 ## Configure MQTT options
 
-To change the settings, follow these steps:
+To change the options, follow these steps:
 
 1. Go to **{% my integrations title="Settings > Devices & services" %}**.
 2. Select the MQTT integration.
 3. Select **Configure**, then **Re-configure MQTT**.
 4. To open the MQTT options page, select **Next**.
+
+### Change MQTT discovery options
+
+The MQTT discovery options can be changed by following these steps:
+
+1. Navigate to **Settings** > **Devices & Services**
+2. Find the MQTT integration and click on it
+3. Click **CONFIGURE MQTT OPTIONS** button to open the MQTT discovery options page
+
 
 ### Discovery options
 
