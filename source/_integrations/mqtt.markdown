@@ -50,6 +50,23 @@ MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things
 
 {% include integrations/config_flow.md %}
 
+### Change MQTT discovery options
+
+The MQTT discovery options can be changed by following these steps:
+
+1. Navigate to **Settings** > **Devices & Services**
+2. Find the MQTT integration and click on it
+3. Click the **CONFIGURE** button to open the MQTT settings page
+4. Click **CONFIGURE MQTT OPTIONS** to start the options flow
+
+### Reconfigure the MQTT broker settings
+
+The MQTT broker settings can be changed by following these steps:
+
+1. Navigate to **Settings** > **Devices & Services**
+2. Find the MQTT integration and click on it
+3. From the context menu click the **Reconfigure** button to start reconfiguration of the broker settings.
+
 ### Removing the MQTT integration
 
 The MQTT integration and its entities can be removed by following these steps:
