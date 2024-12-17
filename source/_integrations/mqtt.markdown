@@ -221,7 +221,6 @@ The MQTT discovery options can be changed by following these steps:
 2. Find the MQTT integration and click on it
 3. Click **CONFIGURE MQTT OPTIONS** button to open the MQTT discovery options page
 
-
 ### Discovery options
 
 MQTT discovery is enabled by default. Discovery can be turned off. The prefix for the discovery topic (default `homeassistant`) can be changed here as well.
