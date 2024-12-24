@@ -1,5 +1,5 @@
 ---
-title: "About the Backup emergency kit"
+title: "Backup emergency kit"
 description: "Information about backup emergency kit"
 ---
 
