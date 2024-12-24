@@ -10,7 +10,7 @@ Backups are encrypted (AES-128) and you need this information to decrypt the bac
 
 1. To download the emergency kit, go to {% my backup title="**Settings** > **System** > **Backups**" %}
 2. If it is your first time defining backup settings, select **Setup automatic backup** and download the encryption key.
-   - You can also download the key again later under configuration. 
+   - You can also download the key again later under configuration.
 
     ![Screenshot showing the encryption key in the download dialog for the backup emergency kit](/images/more-info/backup_emergency_kit_01.png)
 
@@ -26,6 +26,17 @@ The first time when you set up your backups, an encryption key is generated. But
 3. If you haven't downloaded the current encryption key yet, do it now.
 4. Select **Change encryption key**.
 5. Download the new encryption key and store it in a safe place.
+
+## Checking and disabling backup location
+
+1. To generate a new encryption key, go to {% my backup title="**Settings** > **System** > **Backups**" %}.
+2. Select **Configure automatic backups** and under **Locations**, you can see where your backups are currently stored.
+3. You can also enable or disable a backup location.
+
+## Changing the local backup location
+
+1. To change the local backup location, go to {% my backup title="**Settings** > **System** > **Backups**" %}.
+2. In the top right corner, select the three dots {% icon "mdi:dots-vertical" %} menu and select the backup location.
 
 ## I lost my backup encryption key - how can I retrieve it?
 
