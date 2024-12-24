@@ -963,6 +963,11 @@ brightness_template:
   description: "[Template](/docs/configuration/templating/#using-templates-with-the-mqtt-integration) to extract brightness from the state payload value. Expected result of the template is an integer from 0-255 range."
   required: false
   type: template
+color_temp_kelvin:
+  description: "When set to `true`, `command_topic` will publish color mode updates in Kelvin and process `state_topic` will process state updates in Kelvin. When not set the `color_temp` values are converted to mireds."
+  required: false
+  type: boolean
+  default: false
 color_temp_template:
   description: "[Template](/docs/configuration/templating/#using-templates-with-the-mqtt-integration) to extract color temperature from the state payload value. Expected result of the template is an integer. If `color_temp_kelvin` is `true` the expected value is in Kelvin else mireds are expected."
   required: false
