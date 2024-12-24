@@ -21,6 +21,12 @@ Backups are encrypted (AES-128) and you need this information to decrypt the bac
 
 The first time when you set up your backups, an encryption key is generated. But you can generate new ones. Old backups will still have the generated encryption key, but new backups will use the encryption key you defined yourself.
 
+1. To generate a new encryption key, go to {% my backup title="**Settings** > **System** > **Backups**" %}.
+2. Select **Configure automatic backups** and under **Encryption key**, select **Change**.
+3. If you haven't downloaded the current encryption key yet, do it now.
+4. Select **Change encryption key**.
+5. Download the new encryption key and store it in a safe place.
+
 ## I lost my backup encryption key - how can I retrieve it?
 
 You cannot. The backup encryption key is neither stored on Home Assistant nor on Home Assistant Cloud. If you have lost the encryption key, there is no way to restore the backup.
