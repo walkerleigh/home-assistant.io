@@ -17,7 +17,7 @@ Backups are encrypted (AES-128) and you need this information to decrypt the bac
 2. Store the kit somewhere safe, outside of the Home Assistant system.
    - Without the encryption key, there is no way to restore the backup.
 
-## Changing the encryption key
+## Generating a new encryption key
 
 The first time when you set up your backups, an encryption key is generated. But you can generate new ones. Old backups will still have the generated encryption key, but new backups will use the encryption key you defined yourself.
 
