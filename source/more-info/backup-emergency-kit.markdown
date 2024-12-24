@@ -8,13 +8,13 @@ Backups are encrypted (AES-128) and you need this information to decrypt the bac
 
 ## Storing the backup emergency kit somewhere safe
 
-1. Download the emergency kit:
-   - directly when setting up a backup
-   - or any time from the settings page.
+1. To download the emergency kit, go to {% my backup title="**Settings** > **System** > **Backups**" %}
+2. If it is your first time defining backup settings, select **Setup automatic backup** and download the encryption key.
+   - You can also download the key again later under configuration. 
 
     ![Screenshot showing the encryption key in the download dialog for the backup emergency kit](/images/more-info/backup_emergency_kit_01.png)
 
-2. Store the kit somewhere safe, outside of the Home Assistant system.
+3. Store the kit somewhere safe, outside of the Home Assistant system.
    - Without the encryption key, there is no way to restore the backup.
 
 ## Generating a new encryption key
