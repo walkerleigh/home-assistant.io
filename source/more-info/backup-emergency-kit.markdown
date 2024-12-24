@@ -3,8 +3,8 @@ title: "Backup emergency kit"
 description: "Information about backup emergency kit"
 ---
 
-The backup emergency kit contains information needed to recover your backup, such as the encryption key.
-Backups are encrypted (AES-128) and you need this information to decrypt the backup when you want to restore  your system from that backup.
+The backup emergency kit contains the encryption key needed to recover your backup.
+Backups are encrypted (AES-128) and you need this information to decrypt the backup when you want to restore your system from that backup.
 
 ## Storing the backup emergency kit somewhere safe
 
@@ -19,7 +19,7 @@ Backups are encrypted (AES-128) and you need this information to decrypt the bac
 
 ## Changing the encryption key
 
-The first time when you set up your backups an encryption key is be generated. But you can create your own key. Old backups will still have the generated encryption key, but new backups will use the encryption key you defined yourself.
+The first time when you set up your backups an encryption key is be generated. But you can generate new ones. Old backups will still have the generated encryption key, but new backups will use the encryption key you defined yourself.
 
 ## I lost my backup encryption key - how can I retrieve it?
 
