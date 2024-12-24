@@ -12,9 +12,11 @@ Backups are encrypted (AES-128) and you need this information to decrypt the bac
    - directly when setting up a backup
    - or any time from the settings page.
 
-  ![Screenshot showing the encryption key in the download dialog for the backup emergency kit](/images/more-info/backup_emergency_kit_01.png)
+    ![Screenshot showing the encryption key in the download dialog for the backup emergency kit](/images/more-info/backup_emergency_kit_01.png)
 
 2. Store the kit somewhere safe, outside of the Home Assistant system.
+   - Without the encryption key, there is no way to restore the backup.
+
 
 ## Changing the encryption key
 
