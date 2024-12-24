@@ -1,9 +1,7 @@
 ---
-title: "Backup emergency kit"
+title: "About the Backup emergency kit"
 description: "Information about backup emergency kit"
 ---
-
-## About the backup emergency kit
 
 The backup emergency kit contains information needed to recover your backup, such as the encryption key.
 Backups are encrypted (AES-128) and you need this information to decrypt the backup when you want to restore  system from that backup.
