@@ -576,7 +576,7 @@ It contains the following fields:
 
 ## If-then
 
-This {% term action %} allows you to conditionally (`if`), based on or more [conditions](/docs/scripts/conditions/) (which are `and` combined),
+This {% term action %} allows you to conditionally (`if`), based on one or more [conditions](/docs/scripts/conditions/) (which are `and` combined),
 run a sequence of actions (`then`) and optionally supports running other sequence when the condition didn't pass (`else`).
 
 ```yaml
